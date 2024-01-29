@@ -1,0 +1,30 @@
+nav {
+  background-color: #4056A1;
+  color: #FFFFFF;
+  height: 120px;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-top: 0.5em;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+}
+
+#leftNav {
+  font-size: 40px;
+  font-family: "Bungee";
+}
+
+#rightNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#doubleDown {
+  color: red;
+}
+
