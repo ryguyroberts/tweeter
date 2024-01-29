@@ -8,5 +8,6 @@ header {
   align-items: center;
   justify-content: center;
   background-image: url("/images/brick-wall-dark.png");
+  color: white;
 }
 
