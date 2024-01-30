@@ -19,6 +19,16 @@
   padding-top: 20px;
 }
 
+.tweet header div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tweet header div img {
+  padding-right: 10px;
+}
+
 .tweet footer {
   width: 98.5%;
   margin: 15px 0.75% 10px 0.75%;

@@ -32,10 +32,6 @@ const data = [
   }
 ]
 
-
-
-
-
 //Load Document appent tweet.
 $(document).ready(function() {
   renderTweets(data);
@@ -48,7 +44,10 @@ const createTweetElement = function(tweetData) {
   return `
   <article class ="tweet">
           <header>
-            <p><img src=${tweetData.user.avatars}$>${tweetData.user.name}</p>
+            <div>
+            <img src=${tweetData.user.avatars}$>
+            <p>${tweetData.user.name}</p>
+            </div>
             <p class ="link">${tweetData.user.handle}</p>
           </header>
           <p id="tweet-bod">${tweetData.content.text}</p>
