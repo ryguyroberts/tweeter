@@ -6,6 +6,10 @@
   font-weight: 600;
 }
 
+.tweet:hover {
+  box-shadow: 2px 5px 5px #4056A1;
+}
+
 .tweet header {
   display: flex;
   flex-direction: row;
