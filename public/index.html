@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -41,7 +42,7 @@
     </nav>
 
     <!-- header area-->
-    <header>
+    <header id="main-head">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -57,11 +58,28 @@
         <form action="/tweets/" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
-          <div id ="new-bot">
-            <button id ="tweet-but" type="submit">Tweet</button>
+          <div>
+            <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+      </section>
+      <section>
+        <article class ="tweet">
+          <header>
+            <p><i class="fa-solid fa-face-smile"></i> Name</p>
+            <p class ="link">@Handle</p>
+          </header>
+          <p id="tweet-bod">I am the Tweet Text!</p>
+          <footer>
+            <p>10 days ago</p>
+            <div>
+              <i class="fa-solid fa-flag"></i>
+              <i class="fa-solid fa-retweet"></i>
+              <i class="fa-solid fa-heart"></i>
+            </div>
+          </footer>
+        </article>
       </section>
     </main>
   </body>

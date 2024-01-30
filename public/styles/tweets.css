@@ -1,0 +1,46 @@
+.tweet {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  border: 4px solid #545149;
+  font-weight: 600;
+}
+
+.tweet header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 20px;
+}
+
+.tweet footer {
+  width: 98.5%;
+  margin: 15px 0.75% 10px 0.75%;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 4px;
+  border-style: solid;
+  border-color: #545149;
+  font-size: 16px;
+}
+
+.tweet i:hover {
+  color: #d89820;
+}
+
+.tweet i {
+  color: #4056A1;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+
+#tweet-bod {
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}

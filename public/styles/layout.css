@@ -25,6 +25,11 @@ body {
   font-weight: bold;
 }
 
+.link {
+  color: #4056A1;
+  opacity: 0.2;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

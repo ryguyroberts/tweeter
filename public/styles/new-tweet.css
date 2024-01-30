@@ -17,7 +17,7 @@
   font-size: 16px;
 }
 
-#new-bot {
+.new-tweet div {
   border-top: 4px;
   border-style: solid;
   border-color: #545149;
@@ -29,8 +29,10 @@
   align-items: center;
 }
 
-#tweet-but {
+
+.new-tweet div button {
   background-color: #4056A1;
   color: white;
   border-style: hidden;
 }
+
