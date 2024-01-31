@@ -5,7 +5,6 @@ $(document).ready(function() {
       // No more refresh
       event.preventDefault();
 
-      console.log("We submitted the form");
       // we serialize the data
       const formData = $form.serialize();
 
