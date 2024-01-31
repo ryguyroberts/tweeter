@@ -20,12 +20,31 @@ $(document).ready(function() {
   const $form = $('#new-tweet');
     $form.submit(function(event) {
       const inputTextField = $form.find('textarea#tweet-text')
-      //input empty or over 140
-      if (inputTextField.val() === "" || inputTextField.val().length > 140) {
+      
+
+      // Error path input empty
+      if (inputTextField.val() === "") {
         event.preventDefault();
-        alert("Tweet cannot be empty, or over 140 Chars!")
+        const errorMsg = createErrorElement("empty");
+        const errorContainer = $('.error-container');
+        if (!errorContainer.is(':visible')) {
+          errorContainer.html(errorMsg).slideDown();
+        } else {
+          errorContainer.html(errorMsg)
+        }
+      // Error path over 140 chars
+      } else if(inputTextField.val().length > 140) {
+        event.preventDefault();
+        const errorMsg = createErrorElement("overChar");
+        const errorContainer = $('.error-container');
+        if (!errorContainer.is(':visible')) {
+          errorContainer.html(errorMsg).slideDown();
+        } else {
+          errorContainer.html(errorMsg)
+        }
       } else {
-        // No more refresh & Disable button for now for duplicate clicks
+        // No more refresh & Disable button for now for duplicate clicks, slide error back
+        $('.error-container').slideUp();
         event.preventDefault();
         $form.find(':submit').prop('disabled', true);
 
@@ -49,7 +68,7 @@ $(document).ready(function() {
 
 // HTML outline return
 const createTweetElement = function(tweetData) {
-  const safeHTML = escape(tweetData.content.text);
+  const safeHTML = santitizeText(tweetData.content.text);
   return `
   <article class ="tweet">
           <header>
@@ -71,6 +90,22 @@ const createTweetElement = function(tweetData) {
         </article>
   `
 };
+
+// Error HTML outline
+
+const createErrorElement = function(str) {
+  if (str === "empty") {
+    return `
+    <p><i class="fa-solid fa-radiation"></i> Tweet cannot be empty! <i class="fa-solid fa-radiation"></i></p>
+  `
+  }
+  if (str === "overChar") {
+    return `
+    <p><i class="fa-solid fa-radiation"></i>Tweet cannot be over 140 Chars!<i class="fa-solid fa-radiation"></i></p>
+  `
+  }
+
+}
 
 // Load and render tweets
 const loadAndRenderTweets = function() {
@@ -98,8 +133,9 @@ const loadtweets = function(callback) {
 };
 
 // escape
-const escape = function (str) {
+const santitizeText = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
+
