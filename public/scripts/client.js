@@ -10,7 +10,8 @@
 //     renderTweets(data);
 //   })
 // });
-
+// new doc readu
+// $(() => {});
 $(document).ready(function() {
 
   //Load tweet initially
@@ -21,27 +22,18 @@ $(document).ready(function() {
     $form.submit(function(event) {
       const inputTextField = $form.find('textarea#tweet-text')
       
-
       // Error path input empty
       if (inputTextField.val() === "") {
         event.preventDefault();
         const errorMsg = createErrorElement("empty");
-        const errorContainer = $('.error-container');
-        if (!errorContainer.is(':visible')) {
-          errorContainer.html(errorMsg).slideDown();
-        } else {
-          errorContainer.html(errorMsg)
-        }
+        slideError(errorMsg);
+
       // Error path over 140 chars
       } else if(inputTextField.val().length > 140) {
         event.preventDefault();
         const errorMsg = createErrorElement("overChar");
-        const errorContainer = $('.error-container');
-        if (!errorContainer.is(':visible')) {
-          errorContainer.html(errorMsg).slideDown();
-        } else {
-          errorContainer.html(errorMsg)
-        }
+        slideError(errorMsg);
+
       } else {
         // No more refresh & Disable button for now for duplicate clicks, slide error back
         $('.error-container').slideUp();
@@ -92,11 +84,10 @@ const createTweetElement = function(tweetData) {
 };
 
 // Error HTML outline
-
 const createErrorElement = function(str) {
   if (str === "empty") {
     return `
-    <p><i class="fa-solid fa-radiation"></i> Tweet cannot be empty! <i class="fa-solid fa-radiation"></i></p>
+    <p><i class="fa-solid fa-triangle-exclamation"></i> Tweet cannot be empty! <i class="fa-solid fa-triangle-exclamation"></i></i></p>
   `
   }
   if (str === "overChar") {
@@ -104,7 +95,16 @@ const createErrorElement = function(str) {
     <p><i class="fa-solid fa-radiation"></i>Tweet cannot be over 140 Chars!<i class="fa-solid fa-radiation"></i></p>
   `
   }
+}
 
+// Slide error logic
+const slideError = function(errorMsg) {
+  const errorContainer = $('.error-container');
+  if (!errorContainer.is(':visible')) {
+    errorContainer.html(errorMsg).slideDown();
+  } else {
+    errorContainer.html(errorMsg)
+  }
 }
 
 // Load and render tweets
