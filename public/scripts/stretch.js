@@ -1,9 +1,10 @@
 $(document).ready(function() {
 
-  // Initial hide
   const $tweetContainer = $('.new-tweet');
-  $tweetContainer.hide();
   const $scrollBut = $('#scroll-up').find('button');
+
+  // Initial hide
+  $tweetContainer.hide();
   $scrollBut.hide();
 
   // Top right button for new tweets
@@ -20,14 +21,12 @@ $(document).ready(function() {
 
   // Bottom right button to scroll back
   $scrollBut.on("click", function() {
-    $('html, body').animate({ scrollTop: 0}, function() {
-      $scrollBut.hide();
-    });
+    $('html, body').animate({ scrollTop: 0});
   });
 
-  // When scrolling past a certain Pix value either hide or show elements
+  // When scrolling past a certain Pix value either fade in/out elements
   $(document).bind("scroll.myScroll", function(){    
-    if ($(document).scrollTop() >= 300) {
+    if ($(document).scrollTop() >= 200) {
         $scrollBut.fadeIn();
         $('#right-Nav').fadeOut();
     } else {
