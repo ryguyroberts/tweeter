@@ -6,6 +6,13 @@ $(document).ready(function() {
       event.preventDefault();
 
       console.log("We submitted the form");
+      // we serialize the data
+      const formData = $form.serialize();
 
+      $.post("/tweets/", formData, function() {
+        //function that runs after ajax post sent
+        const inputTextField = $form.find('textarea#tweet-text')
+        inputTextField.val("");
+      });
     });
 });
