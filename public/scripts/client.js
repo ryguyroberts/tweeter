@@ -49,6 +49,7 @@ $(document).ready(function() {
 
 // HTML outline return
 const createTweetElement = function(tweetData) {
+  const safeHTML = escape(tweetData.content.text);
   return `
   <article class ="tweet">
           <header>
@@ -58,7 +59,7 @@ const createTweetElement = function(tweetData) {
             </div>
             <p class ="handle">${tweetData.user.handle}</p>
           </header>
-          <p class ="tweet-bod">${tweetData.content.text}</p>
+          <p class ="tweet-bod">${safeHTML}</p>
           <footer>
             <p>${timeago.format(tweetData.created_at)}</p>
             <div>
@@ -94,4 +95,11 @@ const loadtweets = function(callback) {
   $.get("/tweets", function(data, status) {
     callback(data);
   })
+};
+
+// escape
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 };
