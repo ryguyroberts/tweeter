@@ -5,13 +5,47 @@
  */
 
 //Load Document appent tweet.
-$(document).ready(function() {
-  loadtweets(function(data) {
-    renderTweets(data);
-  })
-});
+// $(document).ready(function() {
+//   loadtweets(function(data) {
+//     renderTweets(data);
+//   })
+// });
 
-//helper functions
+$(document).ready(function() {
+
+  //Load tweet initially
+  loadAndRenderTweets();
+
+  // Listener event on form Submit
+  const $form = $('#new-tweet');
+    $form.submit(function(event) {
+      const inputTextField = $form.find('textarea#tweet-text')
+      //input empty or over 140
+      if (inputTextField.val() === "" || inputTextField.val().length > 140) {
+        event.preventDefault();
+        alert("Tweet cannot be empty, or over 140 Chars!")
+      } else {
+        // No more refresh & Disable button for now for duplicate clicks
+        event.preventDefault();
+        $form.find(':submit').prop('disabled', true);
+
+        const formData = $form.serialize();
+
+        $.post("/tweets/", formData, function() {
+          //function that runs after ajax post sent
+          // Clear form
+          inputTextField.val("");
+          //Reset char to 0
+          const counterElement = $form.find('.counter')
+          counterElement.text(0);
+          //Re-enable button
+          $form.find(':submit').prop('disabled', false);
+          //fetch new data here
+          loadAndRenderTweets();
+        });
+      }
+    });
+});
 
 // HTML outline return
 const createTweetElement = function(tweetData) {
@@ -37,11 +71,22 @@ const createTweetElement = function(tweetData) {
   `
 };
 
+// Load and render tweets
+const loadAndRenderTweets = function() {
+  loadtweets(function(data) {
+    renderTweets(data);
+  });
+}
+
+
 // RenderTweets
 const renderTweets = function(arrTweetObj) {
+  //Because of two loads(Submit on initial) clear before rendering
+  $('#tweets-container').empty();
+
   for (const tweet of arrTweetObj) {
     const $tweet = createTweetElement(tweet);
-    $('#tweets-container').append($tweet);
+    $('#tweets-container').prepend($tweet);
   }
 };
 
