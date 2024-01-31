@@ -10,8 +10,12 @@ $(document).ready(function() {
 
       $.post("/tweets/", formData, function() {
         //function that runs after ajax post sent
+        // Clear form
         const inputTextField = $form.find('textarea#tweet-text')
         inputTextField.val("");
+        //Reset char to 0
+        const counterElement = $form.find('.counter')
+        counterElement.text(140);
       });
     });
 });
