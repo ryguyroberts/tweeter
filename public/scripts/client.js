@@ -64,7 +64,6 @@ const createTweetElement = function(tweetData) {
 // RenderTweets
 const renderTweets = function(arrTweetObj) {
   for (const tweet of arrTweetObj) {
-    console.log(tweet);
     const $tweet = createTweetElement(tweet);
     $('#tweets-container').append($tweet);
   }
