@@ -44,6 +44,7 @@
 
 .tweet i:hover {
   color: #d89820;
+  cursor: pointer;
 }
 
 .tweet i {
@@ -52,9 +53,13 @@
   padding-right: 2px;
 }
 
-
-#tweet-bod {
+.tweet-bod {
   padding-left: 30px;
   padding-top: 30px;
   padding-bottom: 10px;
+}
+
+.handle {
+  color: #4056A1;
+  opacity: 0.4;
 }

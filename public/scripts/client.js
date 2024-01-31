@@ -4,8 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-//Temp test data.
 // Fake data taken from initial-tweets.json
 const data = [
   {
@@ -22,7 +20,7 @@ const data = [
   },
   {
     "user": {
-      "name": "Descartes",
+      "name": "Des",
       "avatars": "https://i.imgur.com/nlhLi3I.png",
       "handle": "@rd" },
     "content": {
@@ -48,9 +46,9 @@ const createTweetElement = function(tweetData) {
             <img src=${tweetData.user.avatars}$>
             <p>${tweetData.user.name}</p>
             </div>
-            <p class ="link">${tweetData.user.handle}</p>
+            <p class ="handle">${tweetData.user.handle}</p>
           </header>
-          <p id="tweet-bod">${tweetData.content.text}</p>
+          <p class ="tweet-bod">${tweetData.content.text}</p>
           <footer>
             <p>${tweetData.created_at}</p>
             <div>
