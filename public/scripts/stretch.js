@@ -25,10 +25,16 @@ $(document).ready(function() {
     });
   });
 
-  //when scrolling on tweets! section
-  $(document).on('scroll', function() {
-    $scrollBut.show();
-  });
+  // When scrolling past a certain Pix value either hide or show elements
+  $(document).bind("scroll.myScroll", function(){    
+    if ($(document).scrollTop() >= 300) {
+        $scrollBut.show();
+        $('#right-Nav').hide();
+    } else {
+      $scrollBut.hide();
+      $('#right-Nav').show();
+    }
+});
 
 });
 
