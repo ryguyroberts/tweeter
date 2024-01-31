@@ -95,7 +95,7 @@ const createErrorElement = function(str) {
   }
   if (str === "overChar") {
     return `
-    <p><i class="fa-solid fa-radiation"></i>Tweet cannot be over 140 Chars!<i class="fa-solid fa-radiation"></i></p>
+    <p><i class="fa-solid fa-triangle-exclamation"></i>Tweet cannot be over 140 Chars!<i class="fa-solid fa-triangle-exclamation"></i></p>
   `
   }
 }
@@ -123,7 +123,7 @@ const loadAndRenderTweets = function() {
 
 // RenderTweets
 const renderTweets = function(arrTweetObj) {
-  //Because of two loads(Submit on initial) clear before rendering
+  //Clear before rendering
   $('#tweets-container').empty();
 
   for (const tweet of arrTweetObj) {

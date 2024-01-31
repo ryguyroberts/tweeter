@@ -18,10 +18,16 @@ nav {
   font-family: "Bungee";
 }
 
-#rightNav {
+#right-Nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #4056A1;
+  border: none;
+}
+
+#right-Nav:hover {
+  cursor: pointer;
 }
 
 #doubleDown {
