@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   // Initial hide
-  $tweetContainer = $('.new-tweet');
+  const $tweetContainer = $('.new-tweet');
   $tweetContainer.hide();
   const $scrollBut = $('#scroll-up').find('button');
   $scrollBut.hide();
@@ -28,14 +28,13 @@ $(document).ready(function() {
   // When scrolling past a certain Pix value either hide or show elements
   $(document).bind("scroll.myScroll", function(){    
     if ($(document).scrollTop() >= 300) {
-        $scrollBut.show();
-        $('#right-Nav').hide();
+        $scrollBut.fadeIn();
+        $('#right-Nav').fadeOut();
     } else {
-      $scrollBut.hide();
-      $('#right-Nav').show();
+      $scrollBut.fadeOut();
+      $('#right-Nav').fadeIn();
     }
-});
-
+  });
 });
 
 
