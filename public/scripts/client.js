@@ -13,10 +13,13 @@
 // new doc readu
 // $(() => {});
 $(document).ready(function() {
+  //Initialize error and hide, so it has a height for first slidedown event
+  const errorContainer = $('.error-container');
+  errorContainer.hide();
 
-  //Load tweet initially
+  //Load tweets initially
   loadAndRenderTweets();
-
+ 
   // Listener event on form Submit
   const $form = $('#new-tweet');
     $form.submit(function(event) {
@@ -100,9 +103,13 @@ const createErrorElement = function(str) {
 // Slide error logic
 const slideError = function(errorMsg) {
   const errorContainer = $('.error-container');
+  
   if (!errorContainer.is(':visible')) {
+    // if not visible, clear prior state, set content and then slidedown
     errorContainer.html(errorMsg).slideDown();
+
   } else {
+    // if visible just want to update the error
     errorContainer.html(errorMsg)
   }
 }
@@ -113,7 +120,6 @@ const loadAndRenderTweets = function() {
     renderTweets(data);
   });
 }
-
 
 // RenderTweets
 const renderTweets = function(arrTweetObj) {
