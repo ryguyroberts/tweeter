@@ -7,10 +7,6 @@
     background-color: #4056A1;
   }
 
-  #right-Nav {
-    background-color: #4056A1;
-  }
-
   main {
     display: flex;
     flex-direction: row;

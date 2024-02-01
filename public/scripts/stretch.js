@@ -18,7 +18,7 @@ $(document).ready(function() {
       $tweetContainer.slideDown();
       $textArea.focus();
     } else {
-      // if visible slidup
+      // if visible slide up
       $tweetContainer.slideUp();
       if ($errorContainer.is(':visible')) {
         $errorContainer.slideUp();

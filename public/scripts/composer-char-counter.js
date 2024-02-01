@@ -8,7 +8,7 @@ $(document).ready(function() {
     // Length of textbox value
     let inputLength = $(this).val().length;
 
-    // Shows negative if over char count or back to default and sets red
+    // Shows negative and red if over char count
     if (inputLength > 140) {
       inputLength = ((inputLength - 140) * -1);
       counterElement.css('color', 'red');
