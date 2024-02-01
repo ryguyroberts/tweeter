@@ -1,0 +1,36 @@
+@import 'variables';
+
+nav {
+  background-color: transparent;
+  color: #FFFFFF;
+  height: 120px;
+  padding: 0.5% 1.5% 0 1.5%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+}
+
+#leftNav {
+  font-size: 40px;
+  font-family: "Bungee";
+}
+
+#right-Nav {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+}
+
+#right-Nav:hover {
+  cursor: pointer;
+}
+
+#doubleDown {
+  color: red;
+}

@@ -1,3 +1,5 @@
+@import 'variables';
+
 .new-tweet {
   margin-top: 45px;
   display: flex;
@@ -18,7 +20,7 @@
 }
 
 .new-tweet div {
-  border-top: 4px solid #545149;
+  border-top: $top-grey;
   padding-top: 14px;
   font-family: "Bungee";
   display: flex;
@@ -27,8 +29,10 @@
   align-items: center;
 }
 
+
 .new-tweet div button {
   background-color: #4056A1;
   color: white;
   border-style: hidden;
 }
+
