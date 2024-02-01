@@ -44,7 +44,7 @@ const slideError = function(errorMsg) {
   const $errorContainer = $('.error-container');
   
   if (!$errorContainer.is(':visible')) {
-    // if not visible, clear prior state, set content and then slidedown
+    // if not visible set content and then slidedown
     $errorContainer.html(errorMsg).slideDown();
 
   } else {
