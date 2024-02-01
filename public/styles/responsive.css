@@ -27,6 +27,6 @@
     margin-top: 200px;
     flex: 2;
     flex-direction: column;
-
+    max-width: 50%;
   }
 }
