@@ -13,6 +13,7 @@ $(document).ready(function() {
       counterElement.css('color', 'red');
     } else {
       counterElement.css('color', '');
+      inputLength = ((inputLength - 140) * -1);
     }
     // Set text
     counterElement.text(inputLength);
