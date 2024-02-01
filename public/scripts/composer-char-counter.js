@@ -1,3 +1,4 @@
+/* global $ document*/
 // When DOM is ready
 $(document).ready(function() {
   $('#tweet-text').on('input', function() {
@@ -17,6 +18,5 @@ $(document).ready(function() {
     }
     // Set text
     counterElement.text(inputLength);
-  })
-
+  });
 });
