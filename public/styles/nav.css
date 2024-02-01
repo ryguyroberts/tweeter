@@ -10,13 +10,11 @@ nav {
   align-items: center;
   position: fixed;
 }
-
-#leftNav {
+nav #leftNav {
   font-size: 40px;
   font-family: "Bungee";
 }
-
-#right-Nav {
+nav #right-Nav {
   color: white;
   display: flex;
   flex-direction: column;
@@ -24,11 +22,9 @@ nav {
   background-color: transparent;
   border: none;
 }
-
-#right-Nav:hover {
+nav #right-Nav:hover {
   cursor: pointer;
 }
-
-#doubleDown {
+nav #right-Nav #doubleDown {
   color: red;
 }

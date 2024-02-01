@@ -11,26 +11,26 @@ nav {
   justify-content: space-between;
   align-items: center;
   position: fixed;
-}
 
-#leftNav {
-  font-size: 40px;
-  font-family: "Bungee";
-}
+  #leftNav {
+    font-size: 40px;
+    font-family: "Bungee";
+  }
 
-#right-Nav {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: transparent;
-  border: none;
-}
+  #right-Nav {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    border: none;
 
-#right-Nav:hover {
-  cursor: pointer;
-}
+    &:hover {
+      cursor: pointer;
+    }
 
-#doubleDown {
-  color: red;
+    #doubleDown {
+      color: red;
+    }
+  }
 }
