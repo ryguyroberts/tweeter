@@ -5,12 +5,13 @@ Tweeter is a simple, single-page X(The artist formally know as twitter) clone.
 ## Final Product
 
 ### Desktop Page
-
+!["Desktop Page"](https://github.com/ryguyroberts/tweeter/blob/master/docs/Desktop%20Page.png?raw=true)
 ### Desktop Compose
-
+!["Desktop Compose"](https://github.com/ryguyroberts/tweeter/blob/master/docs/desktop%20Compose.png?raw=true)
 ### Desktop Error
-
+!["Desktop Error"](https://github.com/ryguyroberts/tweeter/blob/master/docs/desktop%20error.png?raw=true)
 ### Non Desktop Page
+!["Non Desktop Page"](https://github.com/ryguyroberts/tweeter/blob/master/docs/Non%20Desktop%20Page.png?raw=true)
 
 ## Dependencies
 
@@ -23,6 +24,7 @@ Tweeter is a simple, single-page X(The artist formally know as twitter) clone.
 
 
 ## Dev Dependencies
+
 - Nodemon
 
 ## Getting Started
