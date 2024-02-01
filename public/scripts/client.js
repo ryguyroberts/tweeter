@@ -30,9 +30,9 @@ $(document).ready(function() {
         event.preventDefault();
         const errorMsg = createErrorElement("empty");
         slideError(errorMsg);
-
+    
       // Error path over 140 chars
-      } else if(inputTextField.val().length > 140) {
+      } else if (inputTextField.val().length > 140) {
         event.preventDefault();
         const errorMsg = createErrorElement("overChar");
         slideError(errorMsg);

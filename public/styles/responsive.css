@@ -1,0 +1,32 @@
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+  }
+
+  nav {
+    background-color: #4056A1;
+  }
+
+  #right-Nav {
+    background-color: #4056A1;
+  }
+
+  main {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #main-head {
+    margin-top: 250px;
+    flex: 1;
+    margin-left: 50px;
+    margin-right: 100px;
+  }
+
+  .container {
+    margin-top: 200px;
+    flex: 2;
+    flex-direction: column;
+
+  }
+}
