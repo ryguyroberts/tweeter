@@ -9,5 +9,5 @@
   justify-content: center;
   background-image: url("/images/brick-wall-dark.png");
   color: white;
+  min-width: 400px;
 }
-
